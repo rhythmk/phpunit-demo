@@ -1,0 +1,24 @@
+{
+    "name": "wangk/phpunit",
+    "authors": [
+        {
+            "name": "wangk",
+            "email": "wangkun@inboyu.com"
+        }
+    ],
+    "autoload": {
+        "autoload": {
+            "psr-4": {"rhythmk\\": ""}
+        }
+    },
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^6.2"
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer/"
+        }
+    }
+}
