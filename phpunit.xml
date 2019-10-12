@@ -6,7 +6,7 @@
          bootstrap="vendor/autoload.php"
 >
     <testsuites>
-        <testsuite name="EmailValidator Test Suite">
+        <testsuite name="Test Suite">
             <directory>./Test/</directory>
             <exclude>./vendor/</exclude>
         </testsuite>
