@@ -6,7 +6,7 @@ php:
   - 7.1
   - 7.2
 
-before_script:
+install:
   - composer install --prefer-dist --optimize-autoloader --quiet
 
 script:
