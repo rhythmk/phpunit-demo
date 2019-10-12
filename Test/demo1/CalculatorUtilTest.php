@@ -20,13 +20,6 @@ class CalculatorUtilTest extends TestCase
         $this->assertEquals($data, 11);
     }
 
-    public function testSum1()
-    {
-        $util = new CalculatorUtil();
-        $data = $util->sum(10, 1);
-        $this->assertEquals($data, 12);
-    }
-
 
 }
 
