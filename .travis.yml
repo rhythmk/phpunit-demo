@@ -1,27 +1,17 @@
-sudo: false
-
-dist: trusty
 
 language: php
 
 php:
-
   - 7.0
   - 7.1
   - 7.2
 
-
-env:
-  global:
-    - deps=no
-
-
-install:
-  - if [ "$deps" = "no" ]; then composer install; fi
-  - if [ "$deps" = "low" ]; then composer update --prefer-lowest; fi
-  - if [ "$deps" = "high" ]; then composer update; fi
+before_script:
+  -  pwd
+  -  export cwd=`pwd`
+  -  composer self-update
+  -  composer install
 
 script:
-  - mkdir -p build/logs
-  - vendor/bin/phpunit --configuration   phpunit.xml
+  - vendor/bin/phpunit  --coverage-text
 
