@@ -7,11 +7,8 @@ php:
   - 7.2
 
 before_script:
-  -  pwd
-  -  export cwd=`pwd`
-  -  composer self-update
-  -  composer update
+  - composer install --prefer-dist --optimize-autoloader --quiet
 
 script:
-  - vendor/bin/phpunit
+  - ./vendor/bin/phpunit
 
