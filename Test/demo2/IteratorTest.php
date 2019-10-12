@@ -4,7 +4,8 @@
  * Time: 8:14
  */
 
-namespace demo2;
+namespace rhythmk\test\demo2;
+
 
 use Iterator;
 use PHPUnit\Framework\TestCase;

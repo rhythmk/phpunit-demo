@@ -1,7 +1,14 @@
-<phpunit bootstrap="vendor/autoload.php">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         bootstrap="vendor/autoload.php"
+>
     <testsuites>
-        <testsuite name="service">
-            <directory>demo1</directory>
+        <testsuite name="EmailValidator Test Suite">
+            <directory>./Test/</directory>
+            <exclude>./vendor/</exclude>
         </testsuite>
     </testsuites>
 </phpunit>

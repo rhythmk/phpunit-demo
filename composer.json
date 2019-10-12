@@ -1,24 +1,30 @@
 {
-    "name": "wangk/phpunit",
-    "authors": [
-        {
-            "name": "wangk",
-            "email": "wangkun@inboyu.com"
-        }
-    ],
-    "autoload": {
-        "autoload": {
-            "psr-4": {"rhythmk\\": ""}
-        }
-    },
-    "require": {},
-    "require-dev": {
-        "phpunit/phpunit": "^6.2"
-    },
-    "repositories": {
-        "packagist": {
-            "type": "composer",
-            "url": "https://mirrors.aliyun.com/composer/"
-        }
+  "name": "wangk/phpunit",
+  "authors": [
+    {
+      "name": "wangk",
+      "email": "wangkun@inboyu.com"
     }
+  ],
+  "autoload": {
+      "psr-4": {
+        "rhythmk\\": "src"
+      }
+  },
+  "require": {},
+  "require-dev": {
+    "phpunit/phpunit": "^6.2",
+    "satooshi/php-coveralls": "^1.0.1"
+  },
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://mirrors.aliyun.com/composer/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "rhythmk\\test\\": "test"
+    }
+  }
 }

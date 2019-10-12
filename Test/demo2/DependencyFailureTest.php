@@ -4,7 +4,7 @@
  * Time: 7:50
  */
 
-namespace demo2;
+namespace rhythmk\test\demo2;
 
 
 use PHPUnit\Framework\TestCase;

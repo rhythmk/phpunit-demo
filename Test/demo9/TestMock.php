@@ -5,7 +5,7 @@
  */
 
 
-namespace demo9;
+namespace rhythmk\test\demo9;
 
 use PHPUnit\Framework\TestCase;
 use PHPUnit_Framework_MockObject_MockObject;
@@ -15,35 +15,39 @@ use PHPUnit_Framework_MockObject_MockObject;
  * @package demo9
  *          mock 使用规则
  */
-class User{
-    public  function  getName(){
+class User
+{
+    public function getName()
+    {
         return "name1";
     }
 
-    public function  getNameById($id){
-        if($id===10){
+    public function getNameById($id)
+    {
+        if ($id === 10) {
             return 'name10';
         }
         return 'name';
     }
 }
 
-class TestMock extends  TestCase
+class TestMock extends TestCase
 {
-    public function  testStub(){
-        $stub=$this->createMock(User::class);
+    public function testStub()
+    {
+        $stub = $this->createMock(User::class);
         $stub->method('getName')->willReturn('name1');
 
         /* @var $stub  User */
         $this->assertEquals('name1', $stub->getName());
-        fwrite(STDOUT, '############'.$stub->getNameById(1) .'$$$$$'. PHP_EOL);
+        fwrite(STDOUT, '############' . $stub->getNameById(1) . '$$$$$' . PHP_EOL);
     }
 
     public function testReturnArgumentStub()
     {
         // 为 SomeClass 类创建桩件。
         $stub = $this->createMock(User::class);
-        /* @var $stub PHPUnit_Framework_MockObject_MockObject  */
+        /* @var $stub PHPUnit_Framework_MockObject_MockObject */
         /* @var $stub  User */
         // 配置桩件。
 
@@ -57,6 +61,7 @@ class TestMock extends  TestCase
         // $stub->doSomething('bar') 返回 'bar'
         $this->assertEquals('10', $stub->getNameById(10));
     }
+
     public function testReturnValueMapStub()
     {
         // 为 SomeClass 类创建桩件。
@@ -78,10 +83,13 @@ class TestMock extends  TestCase
     }
 
 
-    public  function  testFunctionCallback(){
+    public function testFunctionCallback()
+    {
         $stub = $this->createMock(User::class);
         $stub->method('getNameById')
-            ->will( $this->returnCallback(function ($id){ return $id.$id; }));
+            ->will($this->returnCallback(function ($id) {
+                return $id . $id;
+            }));
         $this->assertEquals('ee', $stub->getNameById('e'));
     }
 
@@ -89,18 +97,20 @@ class TestMock extends  TestCase
     /**
      * 将当前对象传入到回调mock
      */
-    public  function  testFunctionCallback2(){
+    public function testFunctionCallback2()
+    {
         $stub = $this->createMock(User::class);
-        $_t= $this;
+        $_t   = $this;
         $stub->method('getNameById')
-            ->will( $this->returnCallback(function ($id) use($_t){
+            ->will($this->returnCallback(function ($id) use ($_t) {
                 return $_t->doubleId($id);
             }));
         $this->assertEquals('ee', $stub->getNameById('e'));
     }
 
-    function doubleId($id){
-       return $id.$id;
+    function doubleId($id)
+    {
+        return $id . $id;
     }
 
 
