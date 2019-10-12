@@ -10,7 +10,7 @@ before_script:
   -  pwd
   -  export cwd=`pwd`
   -  composer self-update
-  -  composer install
+  -  composer update
 
 script:
   - vendor/bin/phpunit  --coverage-text
