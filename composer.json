@@ -21,7 +21,7 @@
       "type": "composer",
       "url": "https://packagist.phpcomposer.com"
     }
-  }
+  },
   "autoload-dev": {
     "psr-4": {
       "rhythmk\\test\\": "test"
