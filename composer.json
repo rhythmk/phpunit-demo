@@ -3,7 +3,7 @@
   "authors": [
     {
       "name": "wangk",
-      "email": "wangkun@inboyu.com"
+      "email": "wangkun@wangkun.com"
     }
   ],
   "autoload": {
@@ -19,9 +19,9 @@
   "repositories": {
     "packagist": {
       "type": "composer",
-      "url": "https://mirrors.aliyun.com/composer/"
+      "url": "https://packagist.phpcomposer.com"
     }
-  },
+  }
   "autoload-dev": {
     "psr-4": {
       "rhythmk\\test\\": "test"
