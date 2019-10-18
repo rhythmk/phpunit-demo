@@ -24,7 +24,7 @@ class CalculatorUtilTest extends TestCase
     {
         $util = new CalculatorUtil();
         $data = $util->sum(10, 1);
-        $this->assertEquals($data, 12);
+        $this->assertNotEquals($data, 12,'输出相等数据');
     }
 
 

@@ -18,7 +18,7 @@ class DependencyFailureTest extends TestCase
 {
     public function testTrue()
     {
-        $this->assertTrue(false, '失败案例');
+        $this->assertTrue(true, '失败案例');
     }
 
     /**

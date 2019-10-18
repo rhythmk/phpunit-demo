@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
  * Class MultipleDependenciesTest
  * @package demo2
  *
- *   通过 @depends 实现多方法依赖执行phpunit
+ *
  */
 class MultipleDependenciesTest extends TestCase
 {
@@ -21,23 +21,25 @@ class MultipleDependenciesTest extends TestCase
     public function testFirst()
     {
         $this->assertTrue(true);
-        return 'first';
+        return "testFirst";
+
     }
 
 
     public function testSecond()
     {
         $this->assertTrue(true);
-        return 'second';
+        return "second";
+
     }
 
     /**
      * @depends  testFirst
      * @depends  testSecond
      */
-    public function testConsumer()
+    public function testConsumer($args)
     {
-        $this->assertEquals(['first', 'second'], func_get_args());
+        $this->assertEquals('testFirst', $args);
     }
 
 }
