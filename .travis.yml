@@ -8,5 +8,8 @@ php:
 install:
   - composer install
 
+services:
+  - mysql
+
 before_script:
   - mysql -e "create database IF NOT EXISTS rhythmk_phpunit;" -uroot
